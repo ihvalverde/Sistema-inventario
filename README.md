@@ -50,7 +50,7 @@ Sigue estos pasos ordenados en tu terminal para inicializar todo el ecosistema d
 
 Abre una consola de PowerShell y muévete al directorio raíz del código fuente en Java:
 
-cd C:\Users\unjfs\Documents\Proyectos\Sistema-ventas\backend\sistema-ventas
+cd ...\Sistema-ventas\backend\sistema-ventas
 
 (Opcional) Si tu terminal restringe la ejecución de scripts externos, habilita temporalmente el wrapper de Maven con la siguiente directiva:
 
@@ -79,7 +79,7 @@ Para interactuar con el módulo visual:
 1. Abre tu navegador web preferido (Chrome, Edge, Firefox, etc.).
 2. Accede directamente cargando la ruta física del archivo principal:
 
-file:///C:/Users/unjfs/Documents/Proyectos/Sistema-ventas/frontend/index.html
+file:///.../Sistema-ventas/frontend/index.html
 
 (Alternativamente, si deseas servirlo de forma web, puedes usar npx serve dentro del directorio frontend, aunque la carga directa es completamente funcional).
 
