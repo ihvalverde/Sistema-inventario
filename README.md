@@ -21,10 +21,7 @@ Antes de iniciar la aplicación, asegúrate de contar con la siguiente configura
 *   **Java 17** (o superior) instalado con la variable de entorno `JAVA_HOME` configurada correctamente.
 *   **MySQL Server** ejecutándose en el puerto estándar `3306`.
 *   **Base de datos configurada:** Debe existir un esquema llamado `sistema_ventas`.
-*   **Credenciales por defecto:** 
-    *   **Usuario:** `root`
-    *   **Contraseña:** `h100704sc`
-    *   *Nota: Si utilizas credenciales distintas, edita los parámetros en `src/main/resources/application.properties`.*
+    *   *Nota: Edita los parámetros en `src/main/resources/application.properties`.*
 *   💡 **No se requiere Node.js / npm:** Toda la UI está desarrollada sobre HTML estático de alto rendimiento.
 
 ---
