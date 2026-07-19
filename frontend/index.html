@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BabyStore Admin | Dulces Sueños</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <img src="img/Logo.png" alt="Logo Dulces Sueños" class="app-logo" />
+                <div class="logo-text">
+                    <h1>Dulces Sueños</h1>
+                    <p>Admin | Baby Boutique</p>
+                </div>
+            </div>
+        </header>
+
+        <section class="form-section">
+            <form id="producto-form">
+                <input type="text" id="nombre" placeholder="Nombre del producto" required />
+
+                <input type="text" id="categoria" list="categorias-list" placeholder="Categoría (Escribe o elige)" required />
+                <datalist id="categorias-list">
+                    <option value="Ropa"></option>
+                    <option value="Accesorios"></option>
+                    <option value="Pañaleras"></option>
+                </datalist>
+
+                <input type="number" id="precio" placeholder="Precio S/." step="0.01" required />
+                <input type="number" id="stock" placeholder="Stock" required />
+
+                <div class="form-buttons">
+                    <button type="submit" id="btn-guardar">Registrar Producto</button>
+                    <button type="button" id="btn-cancelar" style="display: none" onclick="cancelarEdicion()">Cancelar</button>
+                </div>
+            </form>
+        </section>
+
+        <br>
+
+        <section class="dashboard">
+            <div class="card">
+                <span class="card-icon">📦</span>
+                <div class="card-info">
+                    <h3 id="total-productos">0</h3>
+                    <p>Productos</p>
+                </div>
+            </div>
+            <div class="card">
+                <span class="card-icon">💰</span>
+                <div class="card-info">
+                    <h3 id="valor-inventario">S/. 0.00</h3>
+                    <p>Valor Total</p>
+                </div>
+            </div>
+            <div class="card warning">
+                <span class="card-icon">⚠️</span>
+                <div class="card-info">
+                    <h3 id="alertas-stock">0</h3>
+                    <p>Stock Bajo</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="filter-group">
+            <div class="filter-controls">
+                <label for="filtro-categoria">🔍 Filtrar lista:</label>
+                <select id="filtro-categoria" onchange="filtrarProductos()">
+                    <option value="todos">Mostrar Todo</option>
+                </select>
+            </div>
+            <button onclick="exportarExcel()" class="btn-excel">📊 Descargar Excel</button>
+        </div>
+
+        <section class="table-section">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Categoría</th>
+                        <th>Precio</th>
+                        <th>Stock</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-productos"></tbody>
+            </table>
+        </section>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
