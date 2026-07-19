@@ -40,7 +40,7 @@ Sistema-ventas/
 ```
 ---
 
-▶️ Guía de Ejecución Local
+## ▶️ Guía de Ejecución Local
 Sigue estos pasos ordenados en tu terminal para inicializar todo el ecosistema de la aplicación:
 
 1️⃣ Inicializar el Backend (API REST)
