@@ -1,104 +1,170 @@
-# 🏪 Sistema de Gestión de Inventario y Ventas
+<div align="center">
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Backend-Java%2017%20%7C%20Spring%20Boot-orange?style=for-the-badge&logo=spring" alt="Backend">
-  <img src="https://img.shields.io/badge/Frontend-HTML5%20%7C%20CSS3%20%7C%20JS-blue?style=for-the-badge&logo=javascript" alt="Frontend">
-  <img src="https://img.shields.io/badge/Base%20de%20Datos-MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="Database">
-</p>
+# 🏪 Dulces Sueños — Sistema de Inventario y Ventas
 
----
+**Tu baby boutique, siempre bajo control.**
 
-## 📝 Descripción del Proyecto
+[![Backend](https://img.shields.io/badge/Java%2017%20%7C%20Spring%20Boot-E76F00?style=for-the-badge&logo=openjdk&logoColor=white)](https://spring.io/)
+[![Frontend](https://img.shields.io/badge/HTML5%20%7C%20CSS3%20%7C%20JS-333?style=for-the-badge&logo=javascript)](https://developer.mozilla.org/)
+[![Database](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
 
-Este es un Sistema Full Stack integral diseñado para la administración de inventario y control comercial. Cuenta con una arquitectura desacoplada compuesta por un backend robusto en Java con Spring Boot que expone una API RESTful, y una interfaz de usuario dinámica construida con tecnologías web nativas (HTML5, CSS3, JavaScript) que interactúa en tiempo real con los servicios del servidor.
+</div>
 
 ---
 
-## 📦 Prerrequisitos
+## 🍼 ¿Qué es Dulces Sueños?
 
-Antes de iniciar la aplicación, asegúrate de contar con la siguiente configuración local:
+Un **sistema full stack** para administrar el inventario de tu baby boutique de forma moderna y visual. Registra productos, controla el stock, visualiza métricas en un dashboard y exporta reportes a Excel — todo desde tu navegador.
 
-* Java 17 (o superior) instalado con la variable de entorno JAVA_HOME configurada correctamente.
-* MySQL Server ejecutándose en el puerto estándar 3306.
-* Base de datos configurada: Debe existir un esquema llamado sistema_ventas.
-* Credenciales por defecto: 
-    * Usuario: root
-    * Contraseña: h100704sc
-    * Nota: Si utilizas credenciales distintas, edita los parámetros en src/main/resources/application.properties.
-* No se requiere Node.js / npm: Toda la UI está desarrollada sobre HTML estático de alto rendimiento.
+> *Gestión inteligente para tu negocio de bebés.*
 
 ---
 
-## 🛠️ Estructura del Proyecto
+## 🎀 Categorías
 
-La raíz del espacio de trabajo está organizada de forma modular para separar los entornos de servidor y cliente:
-
-Sistema-ventas/
-├─ backend/                  # API Rest construida con Spring Boot (Código Java)
-│   └─ sistema-ventas/       # Proyecto base y dependencias Maven
-├─ frontend/                 # Interfaz gráfica estática que consume la API
-│   └─ index.html            # Página web principal de control
-└─ README.md                 # Documentación del sistema
+| Categoría | Descripción |
+|-----------|------------|
+| **Ropa** | Vestidos, body sets, conjuntos |
+| **Accesorios** | Gorros, calcetines, diademas |
+| **Pañaleras** | Organizadores y neceser |
 
 ---
 
-## ▶️ Guía de Ejecución Local
+## 🛠️ Stack Tecnológico
 
-Sigue estos pasos ordenados en tu terminal para inicializar todo el ecosistema de la aplicación:
+┌─────────────────────────────────────────────────┐
+│                    FRONTEND                      │
+├─────────────────────────────────────────────────┤
+│  HTML5 + CSS3    │  JavaScript vanilla          │
+│  SweetAlert2     │  SheetJS (Export Excel)       │
+│  Google Fonts    │  Quicksand                   │
+└─────────────────────────────────────────────────┘
+                        │
+                        ▼
+┌─────────────────────────────────────────────────┐
+│                    BACKEND                       │
+├─────────────────────────────────────────────────┤
+│  Java 17         │  Spring Boot 3.5             │
+│  Spring Data JPA │  Lombok                      │
+│  REST API        │  Maven                       │
+└─────────────────────────────────────────────────┘
+                        │
+                        ▼
+┌─────────────────────────────────────────────────┐
+│                  BASE DE DATOS                   │
+├─────────────────────────────────────────────────┤
+│  MySQL  │  Puerto 3306  │  Esquema: sistema_ventas │
+└─────────────────────────────────────────────────┘
 
-### 1️⃣ Inicializar el Backend (API REST)
+---
 
-Abre una consola de PowerShell y muévete al directorio raíz del código fuente en Java:
+## ✨ Funcionalidades
 
-cd ...\Sistema-ventas\backend\sistema-ventas
+### Panel de Control
+- 📊 **Dashboard** — Total de productos, valor del inventario, alertas de stock bajo
+- 🔍 **Filtros** — Filtrar productos por categoría en tiempo real
+- 📋 **Datalist** — Sugerencias automáticas al escribir categorías
 
-(Opcional) Si tu terminal restringe la ejecución de scripts externos, habilita temporalmente el wrapper de Maven con la siguiente directiva:
+### CRUD de Productos
+- ➕ **Crear** — Formulario con nombre, categoría, precio y stock
+- ✏️ **Editar** — Carga los datos en el formulario con un clic
+- 🗑️ **Eliminar** — Confirmación visual con SweetAlert2
+- 📦 **Listar** — Tabla dinámica con todas las categorías
 
+### Reportes
+- 📊 **Exportar a Excel** — Descarga un reporte completo con un clic
+- 💰 **Valor total** — Cálculo automático del valor del inventario
+- ⚠️ **Alertas** — Productos con stock menor a 5 unidades
+
+---
+
+## 🚀 Guía de Ejecución
+
+### Requisitos
+- Java 17+ (con `JAVA_HOME` configurado)
+- MySQL Server en puerto 3306
+- Base de datos `sistema_ventas` (se crea automáticamente)
+
+### 1. Backend (API REST)
+
+```bash
+cd backend/sistema-ventas
+
+# Si tu terminal bloquea scripts:
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
 
-Arranca el servidor Spring Boot mediante el comando Maven integrado:
-
+# Ejecutar
 mvn spring-boot:run
+El servidor arranca en http://localhost:8080
+2. Frontend
+cd frontend
+# Opción 1: Abrir directamente
+start index.html
 
-Una vez completado el despliegue de las dependencias y la compilación, la consola mostrará las siguientes trazas de confirmación:
-
-Tomcat started on port 8080 (http)
-Started SistemaVentasApplication in X.xxx seconds
-
-Resolución de conflictos de puertos: Si el puerto 8080 ya se encuentra ocupado por otro servicio de tu máquina, puedes remapear la salida agregando la siguiente propiedad dentro de src/main/resources/application.properties:
-
-server.port=8081  # O cualquier puerto libre de tu preferencia
-
----
-
-### 2️⃣ Inicializar la Interfaz de Usuario (Frontend)
-
-El cliente web consume los endpoints expuestos por el backend en la ruta base http://localhost:8080/api/productos.
-
-Para interactuar con el módulo visual:
-1. Abre tu navegador web preferido (Chrome, Edge, Firefox, etc.).
-2. Accede directamente cargando la ruta física del archivo principal:
-
-file:///.../Sistema-ventas/frontend/index.html
-
-(Alternativamente, si deseas servirlo de forma web, puedes usar npx serve dentro del directorio frontend, aunque la carga directa es completamente funcional).
-
-Al ingresar, se cargará una cuadrícula dinámica interactiva controlada por frontend/js/script.js, permitiéndote realizar operaciones síncronas GET, POST y DELETE para listar, registrar y dar de baja productos en tiempo real.
-
----
-
-## 🧪 Pruebas Manuales de la API (Endpoints)
-
-Si deseas realizar peticiones directas de depuración a los endpoints sin utilizar la interfaz visual, puedes interactuar mediante herramientas como Postman o directamente desde tu consola usando comandos curl:
-
-# 🔍 Listar todos los productos del inventario
+# Opción 2: Con servidor local
+npx serve .
+🧪 Endpoints de la API
+Método	Endpoint	Descripción
+GET	/api/productos	Listar todos los productos
+POST	/api/productos	Registrar un nuevo producto
+DELETE	/api/productos/{id}	Eliminar un producto por ID
+Ejemplos con curl
+# Listar productos
 curl http://localhost:8080/api/productos
 
-# ➕ Registrar un nuevo artículo en stock
-curl -X POST http://localhost:8080/api/productos -H "Content-Type: application/json" -d "{\"nombre\":\"Caramelo\",\"categoria\":\"Dulce\",\"precio\":0.99,\"stock\":200}"
+# Crear producto
+curl -X POST http://localhost:8080/api/productos \
+  -H "Content-Type: application/json" \
+  -d '{"nombre":"Body Estampado","categoria":"Ropa","precio":29.90,"stock":15}'
 
-# ❌ Eliminar un producto específico por su ID (ejemplo: ID 1)
+# Eliminar producto (ID 1)
 curl -X DELETE http://localhost:8080/api/productos/1
-
----
-Desarrollado con dedicación y enfoque en código limpio por Iara Hatsumy (https://github.com/ihvalverde).
+📁 Estructura del Proyecto
+Sistema-ventas/
+├── 📄 database_dulces_sueños.sql   # Script de base de datos
+├── 📄 script.sql                    # Script adicional
+├── 📁 backend/
+│   └── 📁 sistema-ventas/
+│       ├── pom.xml                  # Dependencias Maven
+│       └── 📁 src/main/
+│           ├── java/com/hatsumy/sistemaventas/
+│           │   ├── SistemaVentasApplication.java
+│           │   ├── controllers/
+│           │   │   └── ProductoController.java
+│           │   ├── entities/
+│           │   │   └── Producto.java
+│           │   └── repositories/
+│           │       └── ProductoRepository.java
+│           └── resources/
+│               └── application.properties
+├── 📁 frontend/
+│   ├── index.html                   # Interfaz principal
+│   ├── 📁 css/
+│   │   └── styles.css               # Estilos
+│   └── 📁 js/
+│       └── script.js                # Lógica CRUD + Dashboard
+└── README.md
+🗃️ Schema de la Base de Datos
+CREATE TABLE productos (
+  id        BIGINT AUTO_INCREMENT PRIMARY KEY,
+  nombre    VARCHAR(255) NOT NULL,
+  categoria VARCHAR(100),
+  precio    DOUBLE NOT NULL,
+  stock     INT NOT NULL
+);
+🎨 Paleta de Colores
+Color	HEX	Uso
+Fucsia	#D90166	Botones principales, acentos
+Vibrante	#E76F00	Estado de edición
+Alerta	#FF6B6B	Stock bajo
+Texto	#333333	Texto principal
+Fondo	#FAF5FF	Background suave
+📝 Notas
+- Las credenciales de MySQL por defecto están en application.properties
+- El frontend se conecta al backend en http://localhost:8080/api/productos
+- La exportación a Excel usa SheetJS (carga vía CDN)
+- SweetAlert2 maneja las alertas de confirmación
+<div align="center">
+¿Necesitas ayuda? Escríbeme por GitHub (https://github.com/ihvalverde)
+Hecho con dedicación por Iara Hatsumy 🎀
+</div>
