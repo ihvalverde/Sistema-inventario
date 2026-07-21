@@ -32,6 +32,7 @@ Un **sistema full stack** para administrar el inventario de tu baby boutique de 
 
 ## 🛠️ Stack Tecnológico
 
+```
 ┌─────────────────────────────────────────────────┐
 │                    FRONTEND                      │
 ├─────────────────────────────────────────────────┤
@@ -55,6 +56,7 @@ Un **sistema full stack** para administrar el inventario de tu baby boutique de 
 ├─────────────────────────────────────────────────┤
 │  MySQL  │  Puerto 3306  │  Esquema: sistema_ventas │
 └─────────────────────────────────────────────────┘
+```
 
 ---
 
@@ -95,20 +97,34 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
 
 # Ejecutar
 mvn spring-boot:run
-El servidor arranca en http://localhost:8080
-2. Frontend
+```
+
+El servidor arranca en `http://localhost:8080`
+
+### 2. Frontend
+
+```bash
 cd frontend
 # Opción 1: Abrir directamente
 start index.html
 
 # Opción 2: Con servidor local
 npx serve .
-🧪 Endpoints de la API
-Método	Endpoint	Descripción
-GET	/api/productos	Listar todos los productos
-POST	/api/productos	Registrar un nuevo producto
-DELETE	/api/productos/{id}	Eliminar un producto por ID
-Ejemplos con curl
+```
+
+---
+
+## 🧪 Endpoints de la API
+
+| Método | Endpoint | Descripción |
+|--------|----------|-------------|
+| `GET` | `/api/productos` | Listar todos los productos |
+| `POST` | `/api/productos` | Registrar un nuevo producto |
+| `DELETE` | `/api/productos/{id}` | Eliminar un producto por ID |
+
+### Ejemplos con curl
+
+```bash
 # Listar productos
 curl http://localhost:8080/api/productos
 
@@ -119,7 +135,13 @@ curl -X POST http://localhost:8080/api/productos \
 
 # Eliminar producto (ID 1)
 curl -X DELETE http://localhost:8080/api/productos/1
-📁 Estructura del Proyecto
+```
+
+---
+
+## 📁 Estructura del Proyecto
+
+```
 Sistema-ventas/
 ├── 📄 database_dulces_sueños.sql   # Script de base de datos
 ├── 📄 script.sql                    # Script adicional
@@ -144,7 +166,13 @@ Sistema-ventas/
 │   └── 📁 js/
 │       └── script.js                # Lógica CRUD + Dashboard
 └── README.md
-🗃️ Schema de la Base de Datos
+```
+
+---
+
+## 🗃️ Schema de la Base de Datos
+
+```sql
 CREATE TABLE productos (
   id        BIGINT AUTO_INCREMENT PRIMARY KEY,
   nombre    VARCHAR(255) NOT NULL,
@@ -152,19 +180,35 @@ CREATE TABLE productos (
   precio    DOUBLE NOT NULL,
   stock     INT NOT NULL
 );
-🎨 Paleta de Colores
-Color	HEX	Uso
-Fucsia	#D90166	Botones principales, acentos
-Vibrante	#E76F00	Estado de edición
-Alerta	#FF6B6B	Stock bajo
-Texto	#333333	Texto principal
-Fondo	#FAF5FF	Background suave
-📝 Notas
-- Las credenciales de MySQL por defecto están en application.properties
-- El frontend se conecta al backend en http://localhost:8080/api/productos
+```
+
+---
+
+## 🎨 Paleta de Colores
+
+| Color | HEX | Uso |
+|-------|-----|-----|
+| Fucsia | `#D90166` | Botones principales, acentos |
+| Vibrante | `#E76F00` | Estado de edición |
+| Alerta | `#FF6B6B` | Stock bajo |
+| Texto | `#333333` | Texto principal |
+| Fondo | `#FAF5FF` | Background suave |
+
+---
+
+## 📝 Notas
+
+- Las credenciales de MySQL por defecto están en `application.properties`
+- El frontend se conecta al backend en `http://localhost:8080/api/productos`
 - La exportación a Excel usa SheetJS (carga vía CDN)
 - SweetAlert2 maneja las alertas de confirmación
+
+---
+
 <div align="center">
-¿Necesitas ayuda? Escríbeme por GitHub (https://github.com/ihvalverde)
-Hecho con dedicación por Iara Hatsumy 🎀
+
+**¿Necesitas ayuda?** Escríbeme por [GitHub](https://github.com/ihvalverde)
+
+*Hecho con dedicación por Iara Hatsumy* 🎀
+
 </div>
