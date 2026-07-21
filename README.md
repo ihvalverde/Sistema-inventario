@@ -209,6 +209,6 @@ CREATE TABLE productos (
 
 **¿Necesitas ayuda?** Escríbeme por [GitHub](https://github.com/ihvalverde)
 
-*Hecho con dedicación por Iara Hatsumy* 🎀
+*Hecho con dedicación por Hatsumy* 🎀
 
 </div>
